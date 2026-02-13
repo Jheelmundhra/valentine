@@ -6,11 +6,11 @@ const Gift3 = () => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
 
   const photos = [
-    "/photos/photo1.jpg",
-    "/photos/photo2.jpg",
-    "/photos/photo3.jpg",
-    "/photos/photo4.jpg",
-    "/photos/photo5.jpg",
+    "/photo1.jpg",
+    "/photo2.jpg",
+    "/photo3.jpg",
+    "/photo4.jpg",
+    "/photo5.jpg",
   ];
 
   // ✅ 5 romantic lines (same order as photos)
