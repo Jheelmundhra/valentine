@@ -1,0 +1,474 @@
+.letter-section {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .letter-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ========================================
+     CLOSED SCROLL - PHOTOREALISTIC
+     ======================================== */
+  
+  .scroll-container {
+    position: relative;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-container:hover {
+    transform: translateY(-8px);
+  }
+  
+  .scroll-paper {
+    position: relative;
+    width: 280px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 20px 40px rgba(61, 40, 23, 0.6));
+  }
+  
+  /* Wooden Scroll Handles - LEFT & RIGHT */
+  .scroll-rod {
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 110px;
+    transform: translateY(-50%);
+    background: linear-gradient(
+      to right,
+      #3a2517 0%,
+      #4d3221 20%,
+      #5a3a28 40%,
+      #4d3221 60%,
+      #3a2517 80%,
+      #2d1e12 100%
+    );
+    border-radius: 14px;
+    box-shadow: 
+      inset -3px 0 8px rgba(0, 0, 0, 0.8),
+      inset 3px 0 6px rgba(107, 68, 35, 0.5),
+      0 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: 5;
+  }
+  
+  /* Wood grain detail */
+  .scroll-rod::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0px,
+      transparent 3px,
+      transparent 10px,
+      rgba(0, 0, 0, 0.2) 12px
+    );
+  }
+  
+  .left-rod {
+    left: -5px;
+  }
+  
+  .right-rod {
+    right: -5px;
+  }
+  
+  /* The Rolled Parchment Paper */
+  .paper-roll {
+    position: relative;
+    width: 240px;
+    height: 100px;
+    background: linear-gradient(
+      to bottom,
+      #d6c3a8 0%,
+      #e8d9c3 8%,
+      #f2e8d8 20%,
+      #f5eedf 40%,
+      #f2e8d8 60%,
+      #e8d9c3 80%,
+      #d6c3a8 100%
+    );
+    border-radius: 50px;
+    box-shadow: 
+      0 12px 35px rgba(61, 40, 23, 0.5),
+      inset 0 4px 8px rgba(255, 255, 255, 0.6),
+      inset 0 -4px 8px rgba(139, 90, 43, 0.3);
+    z-index: 3;
+    overflow: hidden;
+  }
+  
+  /* Horizontal roll lines */
+  .paper-roll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      rgba(139, 90, 43, 0.04) 2px,
+      transparent 4px,
+      transparent 8px
+    );
+  }
+  
+  /* Subtle paper texture */
+  .paper-roll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 25% 35%, rgba(139, 90, 43, 0.06) 0%, transparent 10%),
+      radial-gradient(circle at 75% 60%, rgba(139, 90, 43, 0.05) 0%, transparent 8%),
+      radial-gradient(circle at 50% 80%, rgba(139, 90, 43, 0.04) 0%, transparent 12%);
+    opacity: 0.7;
+  }
+  
+  /* Red Wax Seal - Realistic */
+  .wax-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    background: radial-gradient(
+      circle at 30% 30%,
+      #c92a3e 0%,
+      #b01f33 30%,
+      #8b1728 60%,
+      #6d1220 100%
+    );
+    border-radius: 50%;
+    box-shadow: 
+      0 8px 25px rgba(139, 23, 40, 0.8),
+      inset -4px -4px 12px rgba(0, 0, 0, 0.7),
+      inset 4px 4px 10px rgba(255, 100, 120, 0.4);
+    border: 3px solid rgba(109, 18, 32, 0.9);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: sealGlow 2.5s ease-in-out infinite;
+  }
+  
+  /* Glossy highlight on wax */
+  .wax-seal::before {
+    content: '';
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(
+      ellipse at 30% 30%,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.3) 40%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    transform: rotate(-20deg);
+  }
+  
+  /* Wax drip at bottom */
+  .wax-seal::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 12px;
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      #8b1728 0%,
+      #6d1220 80%,
+      transparent 100%
+    );
+    border-radius: 0 0 50% 50%;
+    opacity: 0.9;
+  }
+  
+  .scroll-container:hover .wax-seal {
+    transform: translate(-50%, -50%) scale(1.15) rotate(10deg);
+    box-shadow: 
+      0 12px 40px rgba(139, 23, 40, 1),
+      0 0 50px rgba(139, 23, 40, 0.6),
+      inset -4px -4px 12px rgba(0, 0, 0, 0.7),
+      inset 4px 4px 10px rgba(255, 100, 120, 0.4);
+  }
+  
+  .seal-stamp {
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.6));
+  }
+  
+  @keyframes sealGlow {
+    0%, 100% {
+      box-shadow: 
+        0 8px 25px rgba(139, 23, 40, 0.8),
+        inset -4px -4px 12px rgba(0, 0, 0, 0.7),
+        inset 4px 4px 10px rgba(255, 100, 120, 0.4);
+    }
+    50% {
+      box-shadow: 
+        0 12px 40px rgba(139, 23, 40, 1),
+        0 0 60px rgba(139, 23, 40, 0.7),
+        inset -4px -4px 12px rgba(0, 0, 0, 0.7),
+        inset 4px 4px 10px rgba(255, 100, 120, 0.4);
+    }
+  }
+  
+  .tap-instruction {
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.05rem;
+    color: #8b7690;
+    font-weight: 500;
+    white-space: nowrap;
+    animation: pulse 2s ease-in-out infinite;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3px;
+  }
+  
+  /* ========================================
+     UNROLLED PARCHMENT - CRYSTAL CLEAR
+     ======================================== */
+  
+  .unrolled-scroll {
+    width: 100%;
+    max-width: 550px;
+    min-height: 520px;
+    background: linear-gradient(
+      to bottom,
+      #f5f0e8 0%,
+      #faf6ed 15%,
+      #fdf9f2 30%,
+      #faf6ed 50%,
+      #f8f3ea 70%,
+      #faf6ed 85%,
+      #f5f0e8 100%
+    );
+    border-radius: 18px;
+    padding: 4rem 3.5rem;
+    position: relative;
+    animation: unrollPaper 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 3px solid #d9c6a8;
+    box-shadow: 
+      0 25px 70px rgba(61, 40, 23, 0.5),
+      inset 0 0 100px rgba(210, 180, 140, 0.25),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Parchment texture - SUBTLE */
+  .unrolled-scroll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-image: 
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 36px,
+        rgba(139, 90, 43, 0.025) 36px,
+        rgba(139, 90, 43, 0.025) 37px
+      ),
+      radial-gradient(circle at 18% 22%, rgba(139, 90, 43, 0.06) 0%, transparent 6%),
+      radial-gradient(circle at 82% 68%, rgba(139, 90, 43, 0.05) 0%, transparent 7%),
+      radial-gradient(circle at 45% 85%, rgba(139, 90, 43, 0.04) 0%, transparent 8%);
+    pointer-events: none;
+    opacity: 0.9;
+  }
+  
+  /* Rough top edge */
+  .unrolled-scroll::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 18px;
+    background-image: 
+      radial-gradient(circle at 6% -1px, transparent 7px, #faf6ed 7px),
+      radial-gradient(circle at 20% -2px, transparent 9px, #faf6ed 9px),
+      radial-gradient(circle at 35% -1px, transparent 6px, #faf6ed 6px),
+      radial-gradient(circle at 50% -3px, transparent 8px, #faf6ed 8px),
+      radial-gradient(circle at 65% -1px, transparent 7px, #faf6ed 7px),
+      radial-gradient(circle at 80% -2px, transparent 9px, #faf6ed 9px),
+      radial-gradient(circle at 94% -1px, transparent 7px, #faf6ed 7px);
+    background-size: 14.28% 100%;
+    background-repeat: repeat-x;
+  }
+  
+  /* Smooth, CLEAR unroll animation */
+  @keyframes unrollPaper {
+    0% {
+      opacity: 0;
+      transform: perspective(1000px) rotateX(90deg) scaleY(0.1);
+    }
+    40% {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(45deg) scaleY(0.5);
+    }
+    70% {
+      transform: perspective(1000px) rotateX(15deg) scaleY(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(0deg) scaleY(1);
+    }
+  }
+  
+  .scroll-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  /* Handwritten Font - CLEAR & READABLE */
+  .handwritten-text {
+    font-family: 'Dancing Script', 'Brush Script MT', 'Lucida Handwriting', cursive;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    color: #2a2a2a;
+    text-align: left;
+    white-space: pre-wrap;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .handwritten-text p {
+    margin: 0;
+  }
+  
+  /* Soft Romantic Continue Button */
+  .button-continue-letter {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #ffb6d9 0%, #ffc9e0 100%);
+    color: #8b1538;
+    align-self: center;
+    animation: fadeInUp 0.8s ease-out both;
+    border: 2px solid rgba(255, 182, 217, 0.6);
+    box-shadow: 
+      0 8px 25px rgba(255, 182, 217, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .button-continue-letter:hover {
+    transform: scale(1.08) translateY(-4px);
+    background: linear-gradient(135deg, #ff9ec9 0%, #ffb0d5 100%);
+    box-shadow: 0 12px 35px rgba(255, 182, 217, 0.65);
+    color: #6b0f2a;
+  }
+  
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  
+  @media (max-width: 768px) {
+    .scroll-paper {
+      width: 240px;
+      height: 90px;
+    }
+  
+    .paper-roll {
+      width: 210px;
+      height: 90px;
+    }
+  
+    .scroll-rod {
+      width: 25px;
+      height: 100px;
+    }
+  
+    .wax-seal {
+      width: 68px;
+      height: 68px;
+    }
+  
+    .seal-stamp {
+      font-size: 2rem;
+    }
+  
+    .unrolled-scroll {
+      padding: 3.5rem 3rem;
+      min-height: 480px;
+    }
+  
+    .handwritten-text {
+      font-size: 1.35rem;
+      line-height: 2.3;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .scroll-paper {
+      width: 210px;
+      height: 85px;
+    }
+  
+    .paper-roll {
+      width: 185px;
+      height: 85px;
+    }
+  
+    .scroll-rod {
+      width: 23px;
+      height: 95px;
+    }
+  
+    .wax-seal {
+      width: 62px;
+      height: 62px;
+    }
+  
+    .seal-stamp {
+      font-size: 1.85rem;
+    }
+  
+    .unrolled-scroll {
+      padding: 3rem 2.5rem;
+      min-height: 450px;
+    }
+  
+    .handwritten-text {
+      font-size: 1.25rem;
+      line-height: 2.2;
+    }
+  }

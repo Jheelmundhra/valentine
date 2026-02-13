@@ -1,0 +1,128 @@
+.video-section {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .video-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .media-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(255, 182, 193, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe9f5 100%);
+    animation: glow 2s ease-in-out infinite;
+    position: relative;
+  }
+  
+  .media-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .question-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .question-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.4;
+    animation: fadeInUp 0.8s ease-out;
+    text-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
+    white-space: pre-wrap;
+  }
+  
+  .buttons-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 80px;
+  }
+  
+  .button-yes {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  .button-continue-video {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    color: white;
+    align-self: center;
+    max-width: 200px;
+  }
+  
+  .button-continue-video:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+  }
+  
+  .step-indicator {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(192, 108, 132, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .step-dot.active {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    transform: scale(1.5);
+    box-shadow: 0 0 15px rgba(255, 107, 157, 0.5);
+  }
+  
+  .step-dot.completed {
+    background: linear-gradient(135deg, #c06c84 0%, #8b4f7f 100%);
+  }
+  
+  @media (max-width: 768px) {
+    .video-container {
+      max-width: 100%;
+    }
+  
+    .question-text {
+      font-size: 1.5rem;
+    }
+  
+    .media-wrapper {
+      border-radius: 20px;
+    }
+  
+    .buttons-container {
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .question-text {
+      font-size: 1.3rem;
+    }
+  
+    .question-content {
+      gap: 1.5rem;
+    }
+  }

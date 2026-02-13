@@ -1,0 +1,195 @@
+.love-quiz-content {
+    max-width: 650px;
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.98) 0%, rgba(255, 250, 252, 0.98) 100%);
+  }
+  
+  .quiz-container {
+    position: relative;
+    padding: 1rem;
+  }
+  
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .quiz-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  
+  .quiz-progress {
+    font-size: 1.1rem;
+    color: #8b7690;
+    font-weight: 500;
+  }
+  
+  .question-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+    border: 2px solid rgba(255, 182, 217, 0.3);
+  }
+  
+  .question-text {
+    font-size: 1.5rem;
+    color: #5a3f5f;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .options-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .option-btn {
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.3) 0%, rgba(255, 192, 227, 0.3) 100%);
+    border: 2px solid rgba(255, 107, 157, 0.3);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #5a3f5f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .option-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.5) 0%, rgba(255, 192, 227, 0.5) 100%);
+    border-color: #ff6b9d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+  }
+  
+  .option-btn.selected {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    color: white;
+    border-color: #c06c84;
+    transform: scale(1.02);
+  }
+  
+  .option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  .hearts-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .floating-quiz-heart {
+    font-size: 1.5rem;
+    animation: floatHeart 2s ease-in-out infinite;
+    display: inline-block;
+  }
+  
+  @keyframes floatHeart {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Quiz Result */
+  .quiz-result {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .result-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #ff6b9d;
+    margin-bottom: 2rem;
+  }
+  
+  .result-score {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    color: #ff6b9d;
+  }
+  
+  .score-number {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .score-total {
+    color: #8b7690;
+    font-size: 2.5rem;
+  }
+  
+  .result-message {
+    font-size: 1.4rem;
+    color: #5a3f5f;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  
+  .result-love-note {
+    font-size: 1.2rem;
+    color: #8b7690;
+    font-style: italic;
+    margin: 2rem 0;
+  }
+  
+  .play-again-btn {
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    margin-top: 1rem;
+  }
+  
+  .play-again-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 157, 0.5);
+  }
+  
+  @media (max-width: 768px) {
+    .quiz-title {
+      font-size: 2rem;
+    }
+  
+    .question-text {
+      font-size: 1.3rem;
+    }
+  
+    .option-btn {
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+    }
+  
+    .result-score {
+      font-size: 3rem;
+    }
+  
+    .result-title {
+      font-size: 2rem;
+    }
+  }

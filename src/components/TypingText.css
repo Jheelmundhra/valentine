@@ -1,0 +1,31 @@
+.typing-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-weight: 400;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .cursor {
+    display: inline-block;
+    margin-left: 3px;
+    animation: blink 1s step-end infinite;
+    color: var(--text-soft);
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .typing-text {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }

@@ -1,0 +1,76 @@
+import React, { useState } from 'react';
+import TypingText from './TypingText';
+import './LoveLetter.css';
+
+const LoveLetter = ({ onComplete }) => {
+  const [isOpened, setIsOpened] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const [typingComplete, setTypingComplete] = useState(false);
+
+  const letterText = `Dear Devansh,
+
+I don't know when it happened, but somewhere between your smile and your voice, I fell. 
+
+You make my days softer and my heart calmer. Every moment with you feels like coming home.
+
+I'm really, really in love with you.
+
+With all my heart ♡`;
+
+  const handleOpenLetter = () => {
+    setIsOpened(true);
+    setTimeout(() => {
+      setShowContent(true);
+    }, 800);
+  };
+
+  const handleTypingComplete = () => {
+    setTypingComplete(true);
+  };
+
+  return (
+    <section className="section letter-section">
+      <div className="letter-container">
+        {!isOpened ? (
+          <div className="scroll-container" onClick={handleOpenLetter}>
+            <div className="scroll-paper">
+              <div className="scroll-rod left-rod"></div>
+              <div className="scroll-rod right-rod"></div>
+              <div className="paper-roll"></div>
+              <div className="wax-seal">
+                <div className="seal-stamp">💌</div>
+              </div>
+            </div>
+            <p className="tap-instruction">Tap the seal to open</p>
+          </div>
+        ) : (
+          <div className={`unrolled-scroll ${showContent ? 'show' : ''}`}>
+            <div className="scroll-content">
+              {showContent && (
+                <>
+                  <div className="handwritten-text">
+                    <TypingText 
+                      text={letterText} 
+                      speed={40} 
+                      onComplete={handleTypingComplete}
+                    />
+                  </div>
+                  {typingComplete && (
+                    <button
+                      className="button button-continue-letter"
+                      onClick={onComplete}
+                    >
+                      Continue 💕
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default LoveLetter;
